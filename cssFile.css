@@ -8,11 +8,11 @@ body {
   font-family: arial, helvetica, sans-serif;
 }
 
-p{
+/*p{
 	text-align: center;
 	color:yellow;
 }
-
+*/
 h1 {
 	text-align: center;
 	color:yellow;
@@ -30,4 +30,8 @@ p1{
 img {
     display: block;
     margin: auto;
+}
+p>h2{
+	text-align:center;
+	color:white;
 }
