@@ -7,119 +7,15 @@ body {
   background: #000000;
   font-family: arial, helvetica, sans-serif;
 }
-a:link {
-  color: #00ffff
-}
-a:visited {
-  color: #00ffff
-}
-a:active {
-  color: #80ffff 
-}
-h2 {
-  background-color: #ffff00;
-  color: #000000;
-  border: solid 1px #777;
-  font-size: 1.1em;
-  margin: 0.5em 0em 0.5em 0em;
-  padding: 0.5em;
-}
-h2.title {
-  background-color: #eaeaea;
-  border: solid 1px #888;
-  margin-top: 1em;
-}
-p {
-  margin: 0 1em 1em 0;
-  padding: 0;
-}
-table {
-  font-size: 1em;
+
+p{
+	color:yellow;
 }
 
-/*
-** Page layout blocks / IDs
-*/
-#main {
-  width: 80%;
-}
-#header .title {
-  padding-top: .75em;
-}
-#subnavlist {
-  font-size: 0.8em;
-}
-ul.links li {
-  border-left: 1px solid #888;
-}
-ul.links li.first {
-  border: none;
+h1 {
+	color:yellow;
 }
 
-/*
-** Common declarations for child classes of node, comment, block, box etc
-*/
-.node .submitted {
-  color: #7c7c7c;
-  font-size: 0.9em;
-  float: left;
-  padding: 0.5em 0em 0.5em 1em;
-}
-.node .taxonomy {
-  color: #7c7c7c;
-  font-size: 0.9em;
-  float: right;
-}
-.node .content {
-  clear: both;
-  padding-left: 1em;
-}
-.node .links {
-  padding: 1em 0 1em 0.2em;
-}
-.comment {
-  border: solid 1px #777;
-  margin: 0.5em 0;
-  padding: 0.5em;
-}
-.block {
-  margin-bottom: 10px;
-  font-size: 0.9em;
-}
-.block .content {
-  border: solid 1px #888;
-  border-top: none;
-  margin: 0;
-  padding: 5px;
-}
-.block h2.title {
-  margin: 0;
-}
-
-/*
-** Administration page styles
-*/
-div.admin-panel .description {
-  color: #000000;
-}
-
-div.admin-panel .body {
-  background: #000000;
-}
-
-div.admin-panel h3 {
-  background-color: #888;
-  color: #fff;
-  padding: 5px 8px 5px;
-  margin: 0;
-}
-
-/*
-** Module specific styles
-*/
-.item-list ul li {
-  list-style-image: url(bullet.png);
-}
-.path, .path a, .path a:visited {
-  color: #888;
+h2{
+	color:yellow;
 }
