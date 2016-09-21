@@ -9,16 +9,16 @@ body {
 }
 
 p{
-	alignment:center;
+	text-align: center;
 	color:yellow;
 }
 
 h1 {
-	alignment:center;
+	text-align: center;
 	color:yellow;
 }
 
 h2{
-	alignment:center;
+	text-align: center;
 	color:yellow;
 }
