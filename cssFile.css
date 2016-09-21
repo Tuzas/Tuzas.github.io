@@ -27,7 +27,7 @@ p1{
 	text-align: center;
 }
 
-p>h2{
-	color: purple;
+img {
+    display: block;
+    margin: auto;
 }
-
