@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+    function displayMyMessage2()
+    {
+    document.body.style.backgroundColor = "red";
+    }
+
+    function displayText()
+    	{
+    	document.simpleForm.response.value="You click the red button!";
+    	}
+
+    	function displayText2(){
+    	document.simpleForm.response.value="You click the blue button!";
+    	}
+
+   	function clearText()
+   	{
+   	document.simpleForm.response.value="";
+
+   	}
+   	function displayText4()
+    {
+    alert("Sorry, Cant Help you today");
+    }
+
+   	function displayText3(){
+   	alert("hello");
+   	var firstname, lastname;
+   	firstname = document.simpleForm.name.value;
+   	lastname = document.simpleForm.name2.value;
+
+   	alert("firstname+" "lastname");
+   	}
+
+</script>
+</head>
+<body>
+
+
+<form>
+  <input type="button" name="button2"
+value="no" onclick="displayMyMessage2()"/>
+</form>
+
+
+<FORM name=simpleForm>
+<input type ="button" name="button1"
+value="RED" onclick="displayText()"/> <br>
+
+<input type ="button" name="button2"
+value="RESET" onclick="clearText()"/>
+
+<input type ="button" name="button3"
+value="BLUE" onclick="displayText2()"/>
+
+<TEXTAREA name="response" rows=3
+cols=27></TEXTAREA>
+
+<br>
+
+<table>
+	<tr>
+	<td>
+	Name <TEXTAREA name="name" rows =5 cols=1></TEXTAREA>  Last <TEXTAREA name="name2" rows =5 cols=1></TEXTAREA>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<input type ="button" name="button4"
+value="Confirmation" onclick="displayText3()"/>
+	<input type ="button" name="button5"
+value="Confirmation" onclick="displayText4()"/>
+	</td>
+	</tr>
+</table>
+
+
+
+</FORM>
+
+</body>
+</html>
