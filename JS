@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">document.write("<h1>Hello World! This is Me</h1>");</script>
+<script type="text/javascript">alert("Hello World!");</script>
+<script type ="text/javascript">confirm("Do you want to copy the files ?")</script>
+</body>
+</html>
