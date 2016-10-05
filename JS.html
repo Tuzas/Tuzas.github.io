@@ -20,3 +20,56 @@ value="yes" onclick="displayMyMessage()"/>
 </form>
 </body>
 </html>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+    function displayMyMessage2()
+    {
+    document.bgcolor="BLACK";
+    }
+
+    function displayText()
+    	{
+    	document.simpleForm.response.value="You click the red button!";
+    	}
+
+   	function clearText()
+   	{
+   	document.simpleForm.response.value="";
+   	}
+</script>
+</head>
+<body>
+
+
+<form>
+  <input type="button" name="button2"
+value="no" onclick="displayMyMessage2()"/>
+</form>
+
+
+<FORM name=simpleForm>
+<input type ="button" name="button1"
+value="RED" onclick="displayText()"/> <br>
+
+<input type ="button" name="button2"
+value="RESET" onclick="clearText()"/>
+
+<TEXTAREA name="response" rows=3
+cols=27></TEXTAREA>
+
+<INPUT type="reset value="Reset Form"/>
+
+
+</FORM>
+
+</body>
+</html>
