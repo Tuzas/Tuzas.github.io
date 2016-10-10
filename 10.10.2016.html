@@ -4,11 +4,11 @@
 <title>words</title>
 <script type="text/javascript">
   function add(){
-  var int1,int2;
-  int1 = parseInt(document.addForm.val1.value);
-  int2 = parseInt(document.addForm.val2.value);
+  
+  var int1 = parseInt(document.addForm.val1.value);
+  var int2 = parseInt(document.addForm.val2.value);
   var sum = int1 + int2;
-  document.write(sum);
+  document.addForm.val3.value = sum.toString();
   }
 </script>
 </head>
