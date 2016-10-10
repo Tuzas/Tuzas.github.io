@@ -8,17 +8,17 @@
   var int1 = parseInt(document.getElementById("val1").value);
   var int2 = parseInt(document.getElementById("val2").value);
   var sum = int1 + int2;
-  document.getElementById("val3").value = sum.toString();
+  document.getElementById("val3").value = sum;
   }
 </script>
 </head>
 <body>
 <Form name="addForm">
 int1 int 2   <br>
-<input type="TEXTAREA" value="0" name="val1" id="val1" cols=5 rows=1>
-<input type="TEXTAREA" value="0" name="val2" id="val2" cols=5 rows=1>
-<input type="button" name="add" value="+" onclick="add()"> <br>
-<input type="TEXTAREA" name="val3" id="val3" cols=5 rows=1>
+<input type="text" value="0" name="val1" id="val1" />
+<input type="text" value="0" name="val2" id="val2" />
+<input type="button" name="add" value="+" onclick="add()"/> <br>
+<input type="text" name="val3" id="val3" />
 </Form>
 </body>
 </html>
