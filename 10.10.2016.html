@@ -57,3 +57,35 @@ function incr(){
 </form>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	var Person ={
+	firstName:"Radvilas",lastName:"Mikonis",age:"22", eyes:"Green", profession:"Student"}
+function showData(){
+	if(document.getElementById("0").checked == true)
+		{document.myForm.info.value = Person.firstName;}
+    if(document.getElementById("1").checked == true)
+		{document.myForm.info.value = Person.age;}
+    if(document.getElementById("2").checked == true)
+		{document.myForm.info.value = Person.eyes;}
+		if(document.getElementById("3").checked == true)
+		{document.myForm.info.value = Person.profession;}
+	}
+
+</script>
+
+</head>
+<body>
+<form name="myForm">
+Name<input type="radio" name="bt" id ="0"> <br>
+Age<input type="radio" name="bt" id ="1"> <br>
+Eye Color<input type="radio" name="bt" id="2"> <br>
+Profession<input type="radio" name="bt" id="3"> <br>
+<input type="button" name="render" value="Display" onclick="showData()"/>
+<input type="text" name="info">
+</form>
+</body>
+</html>
