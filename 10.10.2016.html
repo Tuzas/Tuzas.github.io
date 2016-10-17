@@ -64,14 +64,15 @@ function incr(){
 <script>
 	var Person ={
 	firstName:"Radvilas",lastName:"Mikonis",age:"22", eyes:"Green", profession:"Student"}
+
 function showData(){
-	if(document.getElementById("0").checked == true)
+	if(document.getElementById("0").checked)
 		{document.myForm.info.value = Person.firstName;}
-    if(document.getElementById("1").checked == true)
+    if(document.getElementById("1").checked)
 		{document.myForm.info.value = Person.age;}
-    if(document.getElementById("2").checked == true)
+    if(document.getElementById("2").checked)
 		{document.myForm.info.value = Person.eyes;}
-		if(document.getElementById("3").checked == true)
+		if(document.getElementById("3").checked)
 		{document.myForm.info.value = Person.profession;}
 	}
 
