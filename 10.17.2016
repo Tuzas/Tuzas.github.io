@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function incr(){
+	var mult = parseInt(document.getElementByID("0").value);
+	var wide = Math.pow(document.getElementByID("1").offsetWidth,mult);
+	var long = Math.pow(document.getElementByID("1").offsetHeight,mult);
+	document.getElementByID("1").style.height= long;
+	document.getElementByID("1").style.width= wide;
+	}
+
+</script>
+
+</head>
+<body>
+
+x<input type="text" name="size" id="0" value=""/>
+<img src="https://www.wired.com/wp-content/uploads/2015/09/google-logo.jpg" id="1" style="width:300px;height:200px;">
+ <br>
+<input type="button" name="render" value="render" onclick="incr()"/>
+</body>
+</html>
