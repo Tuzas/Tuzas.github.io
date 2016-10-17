@@ -35,3 +35,25 @@ int1 int 2   <br>
 
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var increment = 0;
+function incr(){
+	var cars = ["images/Benz.jpg","images/bmw.png","images/ford.png","images/toyota.png","images/honda.jpg"];
+	document.myForm.targetImage.src = cars[increment++];
+	}
+
+</script>
+
+</head>
+<body>
+<form name="myForm">
+<img src="images/Benz.jpg" name="targetImage">
+<input type="button" name="render" value="Next" onclick="incr()"/>
+</form>
+</body>
+</html>
