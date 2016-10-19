@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+function mult(param1,param2,param3)
+	{
+	if(param3=="*"){
+	var result = parseInt(param1) * parseInt(param2);
+	alert(result);
+	}
+	else if(param3=="+"){
+	var result2 = param1 + param2;
+	alert(result2);
+	}
+	else if(param3=="-"){
+	var result3 = param1 - param2;
+	alert(result3);
+	}
+	else if(param3=="/"){
+	var result4 = param1 / param2;
+	alert(result4);
+	}
+	else{}
+	}
+
+</script>
+</head>
+<body>
+<form name="simpleForm">
+<input type="button" value="Run" onclick="mult(document.simpleForm.Text1.value , document.simpleForm.Text2.value , document.simpleForm.Text3.value)">
+Num1<input type="text" name="Text1" id="Text1">
+Num2<input type="text" name="Text2" id="Text2">
+Operation<input type="text" name="Text2" id="Text3">
+</form>
+</body>
+</html>
+
