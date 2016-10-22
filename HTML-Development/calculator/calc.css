@@ -1,0 +1,32 @@
+
+table td {
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+ 
+#Calculator td 
+{
+	border-collapse: collapse;
+	border: 1px solid black;
+    text-align:center; 
+    vertical-align:middle;
+    padding: 15px;
+}
+
+input{
+	
+	border:1px solid #400040;
+}
+
+div{
+	width: 300px ;
+  	margin-left: auto ;
+  	margin-right: auto ;
+	
+}
+h1{
+	text-align:center;
+}
+p{
+	text-align:center;
+}
