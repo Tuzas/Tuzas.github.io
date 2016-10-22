@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="calc.css">
+<meta charset="ISO-8859-1">
+<title>Calculator</title>
+<script type="text/javascript">
+var currentSign = "+";
+var currentNum = "1";
+
+function numChange(radioNum){
+	currentNum = radioNum;
+}
+
+function signChange(button){
+	currentSign = button.value;
+}
+
+function addValue(number){
+	if(currentNum=="1"){
+		var textField = document.getElementById("TArgu1").value;
+		var result = textField + number;
+		if(result.length<=8){
+		document.getElementById("TArgu1").value = result;
+		}
+	}
+	else if(currentNum=="2"){
+		var textField = document.getElementById("TArgu2").value;
+		var result = textField + number;
+		if(result.length<=8){
+			document.getElementById("TArgu2").value = result;
+		}
+	}
+	else{}
+		
+}
+
+function buttonClick(button){
+	if(isFinite(button.value) || button.value=="."){
+		addValue(button.value);
+	}
+	
+	if(button.value=="="){
+		if(currentSign=="+"){
+			var result = 0;
+			result = document.getElementById("TArgu1").value * 1 + document.getElementById("TArgu2").value * 1;
+			document.getElementById("result").value = result;
+			if(isFinite(result)==false){
+				alert("Please use numbers only");
+			}
+		}
+		else if(currentSign=="-"){
+			var result = 0;
+			result = document.getElementById("TArgu1").value * 1 - document.getElementById("TArgu2").value * 1;
+			document.getElementById("result").value = result;
+			if(isFinite(result)==false){
+				alert("Please use numbers only");
+			}
+		}
+		else if(currentSign=="*"){
+			var result = 0;
+			result = (document.getElementById("TArgu1").value * 1) * (document.getElementById("TArgu2").value * 1);
+			document.getElementById("result").value = result;
+			if(isFinite(result)==false){
+				alert("Please use numbers only");
+			}
+		}
+		else if(currentSign=="/"){
+			var result = 0;
+			result = (document.getElementById("TArgu1").value * 1) / (document.getElementById("TArgu2").value * 1);
+			document.getElementById("result").value = result;
+			if(isFinite(result)==false){
+				alert("Please use numbers only");
+			}
+		}
+		else{}
+		
+	}
+	
+	if(button.value=="C"){
+		var field = document.getElementById("result")
+		field.value = "";
+		}
+}
+</script>
+</head>
+<body>
+<h1><em>JavaScript Calculator</em></h1>
+<p>Created By: Radvilas Mikonis</p>
+<div>
+<form name="calcForm">
+First Number : <input type="radio" id="RadArgu1"  name="RadArgu" onclick="numChange('1')" checked="checked">
+<input type="text" id="TArgu1" maxlength="8"><br>
+Second Number : <input type="radio" id="RadArgu2" name="RadArgu" onclick="numChange('2')">
+<input type="text" id="TArgu2" maxlength="8">
+<table id="Calculator">
+	<tr>
+		<td>
+			<input type="button" value="7" onclick="buttonClick(this)">
+		</td>
+		<td>
+			<input type="button" value="8" onclick="buttonClick(this)">
+		</td>
+		<td>
+			<input type="button" value="9" onclick="buttonClick(this)">
+		</td>
+		<td>
+			<input type="button" value="+" onclick="signChange(this)">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="button" value="4" onclick="buttonClick(this)">
+		</td>
+		<td>
+			<input type="button" value="5" onclick="buttonClick(this)">
+		</td>
+		<td>
+			<input type="button" value="6" onclick="buttonClick(this)">
+		</td>
+		<td>
+			<input type="button" value="-" onclick="signChange(this)">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="button" value="1" onclick="buttonClick(this)">
+		</td>
+		<td>
+			<input type="button" value="2" onclick="buttonClick(this)">
+		</td>
+		<td>
+			<input type="button" value="3" onclick="buttonClick(this)">
+		</td>
+		<td>
+			<input type="button" value="*" onclick="signChange(this)">
+		</td>
+		<td>
+		<input type="button" value="/" onclick="signChange(this)">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="button" value="0" onclick="buttonClick(this)">
+		</td>
+		<td>
+		<input type="button" value="." onclick="buttonClick(this)">
+		</td>
+		<td>
+		<input type="button" value="C" onclick="buttonClick(this)">
+		</td>
+		<td>
+		<input type="button" value="=" onclick="buttonClick(this)">
+		</td>
+	</tr>
+</table> <br>
+Result: 
+<input type="text" name="result" id="result">
+</form>
+</div>
+</body>
+</html>
