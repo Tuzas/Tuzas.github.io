@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mikonis Outfit Market</title>
+<script type="text/javascript">
+function changeGloves(field){
+		if(field.value=="1 pairs"){
+		num = 15;
+		document.simpleForm.cost1.value = num;
+		}
+	if(field.value=="2 pairs"){
+		var num = 30;
+		document.simpleForm.cost1.value = num;
+		}
+	if(field.value=="3 pairs"){
+		var num = 45;
+		document.simpleForm.cost1.value = num;
+		}
+}
+
+function changeHats(field){
+	if(field.value=="1"){
+	var num = 35;
+	document.simpleForm.cost2.value = num ;
+
+	var tax = (((document.simpleForm.cost1.value * 1) + 35 ) * .0625)
+
+	document.simpleForm.cost3.value = tax ;
+		}
+	if(field.value=="2"){
+	var num = 70;
+	document.simpleForm.cost2.value = num ;
+
+	var tax = (((document.simpleForm.cost1.value * 1) + 70 ) * .0625)
+
+	document.simpleForm.cost3.value = tax ;
+		}
+}
+	function shipping(field){
+	if(field.value=="Priority Mail $5.00"){
+	document.simpleForm.cost4.value = "5.00";
+
+	var total = document.simpleForm.cost1.value * 1 + document.simpleForm.cost2.value*1 + document.simpleForm.cost3.value*1 + document.simpleForm.cost4.value*1;
+	document.simpleForm.cost5.value = total;
+	}
+	if(field.value=="Over Night $8.00"){
+	document.simpleForm.cost4.value = "8.00";
+
+	var total = document.simpleForm.cost1.value * 1 + document.simpleForm.cost2.value * 1 + document.simpleForm.cost3.value*1 + document.simpleForm.cost4.value*1;
+	document.simpleForm.cost5.value = total;
+	}
+
+}
+
+	function reset(){
+	document.simpleForm.nameText1.value = "";
+	document.simpleForm.nameText2.value = "";
+	document.simpleForm.addressText1.value = "";
+	document.simpleForm.addressText2.value = "";
+	document.simpleForm.cityText1.value = "";
+	document.simpleForm.cityText2.value = "";
+	document.simpleForm.stateText1.value = "Choose a state";
+	document.simpleForm.stateText2.value = "Choose a state";
+	document.simpleForm.zipcodeText1.value = "";
+	document.simpleForm.zipcodeText2.value = "";
+	document.simpleForm.telephoneText1.value = "";
+	document.simpleForm.telephoneText2.value = "";
+	document.simpleForm.emailText1.value = "";
+	document.simpleForm.emailText2.value = "";
+	document.simpleForm.gloves.value = "Choose a quantity";
+	document.simpleForm.hat.value = "Choose a quantity";
+	document.simpleForm.cost1.value = "";
+	document.simpleForm.cost2.value = "";
+	document.simpleForm.cost3.value = "";
+	document.simpleForm.cost4.value = "";
+	document.simpleForm.cost5.value = "";
+	}
+
+	function orderSubmit(){
+	var int1 = document.simpleForm.cost1.value*1;
+	var int2 = document.simpleForm.cost2.value*1;
+	var int3 = ((int1+int2) * .0625);
+	document.simpleForm.cost3.value = int3;
+	var int4 = document.simpleForm.cost4.value*1;
+	var int5 = int1+int2+int3+int4;
+	document.simpleForm.cost5.value = int5;
+	var string = document.simpleForm.cost5.value+"$" + " sold to " + document.simpleForm.nameText1.value + " at " + document.simpleForm.addressText1.value;
+	alert(string);
+	}
+</script>
+</head>
+<body>
+<h1 style="text-align:center">Mikonis Outfit Market</h1>
+<form name="simpleForm">
+<table>
+<tr>
+	<td>
+		<img src="http://www.hopehouseaugusta.org/wp-content/uploads/2012/10/clothes.jpg" style="length:900px;width:200px;">
+	</td>
+</tr>
+<tr>
+	<td nowrap>
+	<h1 style="text-align:center">Shipping Address</h1>
+	Name:<input type="text" name="nameText1"> <br>
+	Address:<input type="text" name="addressText1"> <br>
+	City:<input type="text" name="cityText1"> State:<select name="stateText1">
+			<option>
+			Choose a state
+			</option>
+			<option>
+			New York
+			</option>
+			<option>
+			California
+			</option>
+		</select>
+	ZipCode:<input type="text" name="zipcodeText1"> <br>
+	Telephone:<input type="text" name="telephoneText1"> Email:<input type="text" name="emailText1">
+	</td>
+	<td nowrap>
+	<h1 style="text-align:center">Billing Address</h1>
+	Name:<input type="text" name="nameText2"> <br>
+	Address:<input type="text" name="addressText2"> <br>
+	City:<input type="text" name="cityText2"> State:<select name="stateText2">
+			<option>
+			Choose a state
+			</option>
+			<option>
+			New York
+			</option>
+			<option>
+			California
+			</option>
+			<option>
+			Connecticut
+			</option>
+		</select>
+
+	ZipCode:<input type="text" name="zipcodeText2"> <br>
+	Telephone:<input type="text" name="telephoneText2"> Email:<input type="text" name="emailText2">
+	</td>
+</tr>
+<tr>
+	<td>
+		<table border="1">
+		<tr>
+			<th>Item</th>
+			<th>Quantity</th>
+			<th>Price</th>
+			<th>Cost</th>
+		</tr>
+		<tr>
+			<td>Gloves</td>
+			<td>
+			<select name="gloves" onchange="changeGloves(this)">
+				<option>Choose a quantity</option>
+				<option>1 pairs</option>
+				<option>2 pairs</option>
+				<option>3 pairs</option>
+			</select>
+			</td>
+			<td>
+			15 $
+			</td>
+			<td>
+			<input type="text" name="cost1">
+			</td>
+		</tr>
+		<tr>
+			<td>Hat</td>
+			<td>
+			<select name="hat" onchange="changeHats(this)">
+				<option>Choose a quantity</option>
+				<option>1</option>
+				<option>2</option>
+			</select>
+			</td>
+			<td>
+			35 $
+			</td>
+			<td>
+			<input type="text" name="cost2">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="text-align:right">
+			<strong>6.25% Sales Tax:</strong>
+			</td>
+			<td>
+			<input type="text" name="cost3">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+			<strong>Shipping Method:</strong><select name="option" onchange="shipping(this)">
+			<option>Choose a shipping method</option>
+			<option>Priority Mail $5.00</option>
+			<option>Over Night $8.00</option>
+			</select>
+			</td>
+			<td>
+			<input type="text" name="cost4">
+			</td>
+		</tr>
+		<tr>
+		<td colspan="3" style="text-align:right"><strong>Total:</strong></td>
+		<td><input type="text" name="cost5"></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+<input type="button" value="order submit" onclick="orderSubmit()">
+<input type="button" value="Reset" onclick="reset()">
+</form>
+</body>
+</html>
