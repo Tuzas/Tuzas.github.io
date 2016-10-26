@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function calc1(){
+var result = calc();
+document.calcForm.result.value = result;
+}
+function calc2(){
+var result = calc();
+alert(result);
+}
+
+function calc(){
+	var int1 = document.calcForm.box1.value*1;
+	var int2 = document.calcForm.box2.value*1;
+
+	if(document.calcForm.operations.value=="+")
+		{
+		var result = 0;
+		result = int1 + int2;
+		return result;
+		}
+	if(document.calcForm.operations.value=="-")
+		{
+		var result = 0;
+		var result = int1 - int2;
+		return result;
+		}
+	if(document.calcForm.operations.value=="*")
+		{
+		var result = 0;
+		var result = int1 * int2;
+		return result;
+		}
+	if(document.calcForm.operations.value=="/")
+		{
+		var result = 0;
+		var result = int1 / int2;
+		return result;
+		}
+}
+
+function power(int1,int2){
+int3 = int1*1;
+int4 = int2*1;
+var result = Math.pow(int3,int4);
+return result;
+}
+</script>
+</head>
+<body>
+<form name="calcForm">
+Num1:<input type="text" name="box1">
+Num2:<input type="text" name="box2">
+Res:<input type="text" name="result"><br>
+<select name="operations" onchange="calc1()">
+<option value="Select Operation">Select Operation</option>
+<option value="+">+</option>
+<option value="-">-</option>
+<option value="*">*</option>
+<option value="/">/</option>
+</select>
+<input type="button" value="Compute" onclick="calc2()">
+<input type="button" value="Power" onclick="alert(power(document.calcForm.box1.value,document.calcForm.box2.value))">
+</form>
+</body>
+</html>
