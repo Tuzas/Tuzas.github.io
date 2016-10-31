@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+<script type="text/javascript">
+function nonDescript(){
+alert("click");
+}
+
+function add2(){
+alert("clicked");
+}
+
+function add(){
+var userName={
+"name":document.simpleForm.name.value,
+"last":document.simpleForm.last.value,
+"middle":document.simpleForm.middle.value
+};
+
+alert("Hello " + userName.name + " " + userName.last + " " + userName.middle);
+}
+</script>
+</head>
+<body>
+<form name="simpleForm">
+First<input type ="text" name="name"><br>
+Last<input type ="text" name="last"><br>
+Middle<input type ="text" name="middle"><br>
+<input type="button" value="click me" name="clicker" onclick="add()">
+</form>
+</body>
+</html>
