@@ -6,9 +6,22 @@
 </head>
 <body>
 <p id="loc"></p>
+  <p id="loc1"></p>
+  <p id="loc2"></p>
+  <p id="loc3"></p>
+  <p id="loc4"></p>
+    <p id="loc5"></p>
+    <p id="loc6"></p>
+  
 <script type="text/javascript">
 
 document.getElementById("loc").innerHTML = location.hostname;
+  document.getElementById("loc1").innerHTML = navigator.appName;
+  document.getElementById("loc2").innerHTML = navigator.appCodeName;
+  document.getElementById("loc3").innerHTML = navigator.platform;
+  document.getElementById("loc4").innerHTML = navigator.language;
+  document.getElementById("loc5").innerHTML = navigator.cookieEnabled;
+  document.getElementById("loc6").innerHTML = navigator.javaEnabled();
 </script>
 </body>
 </html>
