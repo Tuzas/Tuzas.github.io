@@ -1,1 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styling.css">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="normalForm">
+<div>
+<h1><em><b>Tic Tac Toe</b></em></h1>
+<table>
+	<tr>
+		<td>
+		<img src="pictures/emptyBox.png" id="box0"  onclick="boxClick(this)">
+		</td>
+		<td>
+		<img src="pictures/emptyBox.png" id="box1"  onclick="boxClick(this)">
+		</td>
+		<td>
+		<img src="pictures/emptyBox.png" id="box2"  onclick="boxClick(this)">
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<img src="pictures/emptyBox.png" id="box3"  onclick="boxClick(this)">
+		</td>
+		<td>
+		<img src="pictures/emptyBox.png" id="box4"  onclick="boxClick(this)">
+		</td>
+		<td>
+		<img src="pictures/emptyBox.png" id="box5"  onclick="boxClick(this)">
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<img src="pictures/emptyBox.png" id="box6"  onclick="boxClick(this)">
+		</td>
+		<td>
+		<img src="pictures/emptyBox.png" id="box7"  onclick="boxClick(this)">
+		</td>
+		<td>
+		<img src="pictures/emptyBox.png" id="box8"  onclick="boxClick(this)">
+		</td>
+	</tr>
+</table>
+One Player:<input type="radio" name="playerchooser" id="playerchooser" onclick="botOn()" checked="checked">
+Two Player:<input type="radio" name="playerchooser" id="playerchooser" onclick="botOff()"> <br>
+Player one wins: <input type=text id="player1" readonly value="0"> <br>
+Player two wins: <input type=text id="player2" readonly value="0"> <br>
+Ties: <input type=text id="ties" readonly value="0"> 
+</div>
+</form>
+<script type="text/javascript">
 
+var boxes = [document.getElementById("box0"),document.getElementById("box1"),document.getElementById("box2"),
+			 document.getElementById("box3"),document.getElementById("box4"),document.getElementById("box5"),
+			 document.getElementById("box6"),document.getElementById("box7"),document.getElementById("box8")];
+			  
+var currentPlayer = 1;
+var bot = true;
+var choosing = true;
+var turnCount = 0;
+var player1Score = 0;
+var player2Score = 0;
+var ties = 0;
+
+function boxClick(box){
+	var pathString = box.src+"";
+	var empty = "empty";
+	if(pathString.match(empty)){
+		if(currentPlayer==1){
+			box.src = "pictures/circleBox.png";
+			currentPlayer = 2;
+			turnCount = turnCount + 1;
+			checkWin();
+				if(bot){
+					while(choosing){
+					var rand = boxes[Math.floor(Math.random() * boxes.length)];
+					var pathString2 = rand.src+"";
+						if(pathString2.match(empty) || turnCount == 9 ){
+							choosing=false;
+						}
+					}
+					if(turnCount!=9){
+					rand.src = "pictures/xBox.png";
+					}
+					currentPlayer = 1;
+					turnCount = turnCount + 1; 
+					choosing=true;
+					checkWin();
+				}
+				
+			}
+		else if(currentPlayer==2){
+			box.src = "pictures/xBox.png";
+			turnCount = turnCount + 1; 
+			currentPlayer = 1;
+			checkWin();
+		}	
+	}
+}
+
+function checkWin(){
+	
+	if(boxes[0].src == boxes[1].src && boxes[0].src == boxes[2].src){
+		if(boxes[0].src.match("xBox")){
+			alert("Player 2 wins!");
+			player2Score = player2Score + 1;
+			document.getElementById("player2").value = player2Score;
+			reset();
+		}
+		else if(boxes[0].src.match("circleBox")){
+			alert("Player 1 wins!");
+			player1Score = player1Score + 1;
+			document.getElementById("player1").value = player1Score;
+			reset();
+		}
+	}
+	
+	 if(boxes[3].src == boxes[4].src && boxes[3].src == boxes[5].src){
+		if(boxes[3].src.match("xBox")){
+			alert("Player 2 wins!");
+			player2Score = player2Score + 1;
+			document.getElementById("player2").value = player2Score;
+			reset();
+		}
+		else if(boxes[3].src.match("circleBox")){
+			alert("Player 1 wins!");
+			player1Score = player1Score + 1;
+			document.getElementById("player1").value = player1Score;
+			reset();
+		}
+	}
+	 if(boxes[6].src == boxes[7].src && boxes[7].src == boxes[8].src){
+		if(boxes[6].src.match("xBox")){
+			alert("Player 2 wins!");
+			player2Score = player2Score + 1;
+			document.getElementById("player2").value = player2Score;
+			reset();
+		}
+		else if(boxes[6].src.match("circleBox")){
+			alert("Player 1 wins!");
+			player1Score = player1Score + 1;
+			document.getElementById("player1").value = player1Score;
+			reset();
+		}
+	}
+     if(boxes[0].src == boxes[3].src && boxes[0].src == boxes[6].src){
+		if(boxes[0].src.match("xBox")){
+			alert("Player 2 wins!");
+			player2Score = player2Score + 1;
+			document.getElementById("player2").value = player2Score;
+			reset();
+		}
+		else if(boxes[0].src.match("circleBox")){
+			alert("Player 1 wins!");
+			player1Score = player1Score + 1;
+			document.getElementById("player1").value = player1Score;
+			reset();
+		}
+	}
+     if(boxes[1].src == boxes[4].src && boxes[4].src == boxes[7].src){
+		if(boxes[1].src.match("xBox")){
+			alert("Player 2 wins!");
+			player2Score = player2Score + 1;
+			document.getElementById("player2").value = player2Score;
+			reset();
+		}
+		else if(boxes[1].src.match("circleBox")){
+			alert("Player 1 wins!");
+			player1Score = player1Score + 1;
+			document.getElementById("player1").value = player1Score;
+			reset();
+		}
+	}
+     if(boxes[2].src == boxes[5].src && boxes[5].src == boxes[8].src){
+		if(boxes[2].src.match("xBox")){
+			alert("Player 2 wins!");
+			player2Score = player2Score + 1;
+			document.getElementById("player2").value = player2Score;
+			reset();
+		}
+		else if(boxes[2].src.match("circleBox")){
+			alert("Player 1 wins!");
+			player1Score = player1Score + 1;
+			document.getElementById("player1").value = player1Score;
+			reset();
+		}
+	}
+     if(boxes[0].src == boxes[4].src && boxes[0].src == boxes[8].src){
+		if(boxes[0].src.match("xBox")){
+			alert("Player 2 wins!");
+			player2Score = player2Score + 1;
+			document.getElementById("player2").value = player2Score;
+			reset();
+		}
+		else if(boxes[0].src.match("circleBox")){
+			alert("Player 1 wins!");
+			player1Score = player1Score + 1;
+			document.getElementById("player1").value = player1Score;
+			reset();
+		}
+	}
+     if(boxes[2].src == boxes[4].src && boxes[2].src == boxes[6].src){
+		if(boxes[2].src.match("xBox")){
+			alert("Player 2 wins!");
+			player2Score = player2Score + 1;
+			document.getElementById("player2").value = player2Score;
+			reset();
+		}
+		else if(boxes[2].src.match("circleBox")){
+			alert("Player 1 wins!");
+			player1Score = player1Score + 1;
+			document.getElementById("player1").value = player1Score;
+			reset();
+		}
+	}
+     if(turnCount == 9){
+		alert("Draw!");
+		ties = ties + 1;
+		document.getElementById("ties").value = ties;
+		reset();
+	}
+    	
+}
+
+function botOn(){
+	bot = true;
+}
+
+function botOff(){
+	bot = false;
+}
+
+function reset(){
+	turnCount = 0;
+	currentPlayer = 1;
+	choosing = true;
+	for(i=0;i<boxes.length;i++){
+		boxes[i].src = "pictures/emptyBox.png";
+	}
+}
+
+</script>
+</body>
+</html>
