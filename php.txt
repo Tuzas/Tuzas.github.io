@@ -9,7 +9,7 @@ addition();
 echo $z;
 ?>
 
-________________________________________________________________________________________________
+________________________________________________________________________________________________________________________________________________________________________________________________
 <html>
 	<body>
 		<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
@@ -26,6 +26,31 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	echo $name;
 	}
 }
+?>
+	</body>
+</html>
+________________________________________________________________________________________________________________________________________________________________________________________________
+
+<html>
+	<body>
+		<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+		Name:<input type="text" name="fname">
+		Password:<input type="text" name="fpassword">
+			<input type="submit">
+		</form>
+	<?php
+$login=array("Rad"=>"wolf", "Ben"=>"fish" , "Garry"=>"rook");
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+	$name=$_REQUEST['fname'];
+	$password=$_REQUEST['fpassword'];
+	if($login[$name]==$password){
+	echo "Access Granted";
+	}
+	else{
+	echo "Access Denied";
+	}
+	}
+
 ?>
 	</body>
 </html>
